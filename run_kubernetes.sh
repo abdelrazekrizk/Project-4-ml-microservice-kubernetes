@@ -9,7 +9,7 @@ dockerpath="abdelrazekrizk/flask_prediction:version1.0"
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run flask_prediction:version1.0 \
+kubectl run flask_prediction \
 --image=$dockerpath \
 --labels="app=flask_prediction:version1.0,env=prod" \
 --env="DNS_DOMAIN=cluster" \

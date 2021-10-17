@@ -4,16 +4,22 @@
 
 # Step 1:
 # Build image and add a descriptive tag
-docker build . -t flask_prediction:version1.0
+docker image build . -t abdelrazekrizk/flask_prediction
 
 # Step 2:
-#Tag image
-#docker tag flask_prediction:latest flask_prediction:version1.0
+#Tag repo
+#docker tag flask_prediction:latest abdelrazekrizk/flask_prediction:version1.0
+#docker image tag flask_prediction flask_prediction:version1.0
 
-# Step 3: 
+# Step 3:
 # List docker images
-docker images 
+docker images -a 
 
-# Step 4: 
-# Run flask app
-docker run -p 127.0.0.1:80:8080/tcp flask_prediction
+# Step 4:
+# List running Container ID
+docker ps -a
+
+# Step 5: 
+# Run flask app 
+#docker run -p 127.0.0.1:8080:80/tcp flask_prediction
+docker run --name Flask_App -p 8080:80/tcp abdelrazekrizk/flask_prediction
