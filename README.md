@@ -29,11 +29,11 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
  - 16 GB memory
  - ami-09e67e426f25ce0d7
 
-* Create a Public/Private Key Pair
+* Create a Public/Private Key Pair:
 
-ssh-keygen -t rsa
+         $ ssh-keygen -t rsa
 
-* Add Public/Private Key Pair to github
+* Add Public/Private Key Pair to github:
 
 # Setup the Environment
 
@@ -43,36 +43,38 @@ https://docs.conda.io/en/latest/miniconda.html#linux-installers
 
 https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
-* Download Latest Miniconda Installer Links for Linux installers
+* Download Latest Miniconda Installer Links for Linux installers:
 
-wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
+         $ wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
  
- * Installing on Linux
+ * Installing on Linux:
 
-bash Miniconda3-py39_4.10.3-Linux-x86_64.sh
+         $ bash Miniconda3-py39_4.10.3-Linux-x86_64.sh
 
-. .bashrc 
+         $ . .bashrc 
 
-conda config --set auto_activate_base false
+         $ conda config --set auto_activate_base false
 
-* Create a virtualenv and activate it
+* Create a virtualenv and activate it:
 
-conda create --name .devops Python=3.6.9
+         $ conda create --name .devops Python=3.6.9
 
-conda activate .devops
+         $ conda activate .devops
 
-* Run `make install` to install the necessary dependencies
-* install make
+* Run `make install` to install the necessary dependencies:
+* install make:
 
-sudo apt install make
+         $ sudo apt install make
 
-* Verify make version
+* Verify make version:
 
-make --version
+         $ make --version
 
-make install
+* Install requirements
 
-conda list
+         $ make install
+
+         $ conda list
 
 ## Running `app.py`
 
@@ -82,7 +84,7 @@ conda list
 
 ## Kubernetes Steps
 
-* Setup and Configure Docker locally
+* Setup and Configure Docker locally:
 
 #### Install Docker Engine on Ubuntu
 
@@ -90,72 +92,92 @@ https://docs.docker.com/engine/install/ubuntu/
 
 * update instance
 
-sudo apt update
-sudo apt upgrade -y
+         $ sudo apt update
+         $ sudo apt upgrade -y
 
-* Update the apt package
+* Update the apt package:
 
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+         $ sudo apt-get install \
+            apt-transport-https \
+            ca-certificates \
+            curl \
+            gnupg \
+            lsb-release
+
 * Add Docker’s official GPG key:
- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+          $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 * Use the following command to set up the stable repository
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+          $ echo \
+                "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+                $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   
-* Install Docker Engine
+* Install Docker Engine:
 
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+          $ sudo apt-get update
+          $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-* Verify Docker version
-docker version
+* Verify Docker version:
 
-* Create Flask app Docker Images
+           $ docker version
 
-./run_docker.sh
+* Create Flask app Docker Images:
+
+           $ . ./run_docker.sh
 
 
-* Setup and Configure Kubernetes locally
+* Setup and Configure Kubernetes locally:
 
 # Installing kubectl
 
 https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
-* Download the Amazon EKS vended kubectl binary for your cluster's Kubernetes version from Amazon S3
+* Download the Amazon EKS vended kubectl binary for your cluster's Kubernetes version from Amazon S3:
 * Kubernetes 1.21:
 
-curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+           $ curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
 
-* Verify the downloaded binary with the SHA-256 sum for your binary. 
+* Verify the downloaded binary with the SHA-256 sum for your binary:
 
-openssl sha1 -sha256 kubectl
+           $ openssl sha1 -sha256 kubectl
 
-* Apply execute permissions to the binary.
+* Apply execute permissions to the binary:
 
-chmod +x ./kubectl
+           $ chmod +x ./kubectl
 
-* Copy the binary to a folder in your PATH. If you have already installed a version of kubectl
+* Copy the binary to a folder in your PATH. If you have already installed a version of kubectl:
 
-mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+           $ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 
-*  Add the $HOME/bin path to your shell initialization file
+*  Add the $HOME/bin path to your shell initialization file:
 
-echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+           $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 
-* Verify kubectl version
+* Verify kubectl version:
 
-kubectl version --short --client
+           $ kubectl version --short --client
 
-* Create Flask app in Container
+* Create Flask app in Container:
 
-* Run via kubectl
+* Run via kubectl:
 
-./run_kubernetes.sh
+           $ . ./run_kubernetes.sh
 
+#  Test  project code using hadolint 
+
+https://github.com/hadolint/hadolint/releases
+
+* Install hadolint
+
+            $ sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.7.0/hadolint-Linux-x86_64 && sudo chmod +x /bin/hadolint
+
+
+Verify hadolint
+
+             $ hadolint --version
+
+             out put
+
+             Haskell Dockerfile Linter 2.7.0-no-git
