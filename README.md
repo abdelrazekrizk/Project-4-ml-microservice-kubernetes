@@ -63,6 +63,31 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
          $ conda list
 
+         
+* Run `make install` to install the necessary dependencies:
+* install make:
+
+         $ sudo apt install make
+
+* Verify make version:
+
+         $ make --version
+         
+         Output
+         GNU Make 4.2.1
+                Built for x86_64-pc-linux-gnu
+                Copyright (C) 1988-2016 Free Software Foundation, Inc.
+                License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+                This is free software: you are free to change and redistribute it.
+                There is NO WARRANTY, to the extent permitted by law.
+
+* Install requirements
+
+         $ make install
+
+         $ conda list
+
+        Output
          # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
                         #
                         # Name                    Version                   Build  Channel
@@ -100,27 +125,6 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
                         xz                        5.2.5                h7b6447c_0  
                         zlib                      1.2.11               h7b6447c_3 
 
-* Run `make install` to install the necessary dependencies:
-* install make:
-
-         $ sudo apt install make
-
-* Verify make version:
-
-         $ make --version
-
-         GNU Make 4.2.1
-                Built for x86_64-pc-linux-gnu
-                Copyright (C) 1988-2016 Free Software Foundation, Inc.
-                License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-                This is free software: you are free to change and redistribute it.
-                There is NO WARRANTY, to the extent permitted by law.
-
-* Install requirements
-
-         $ make install
-
-         $ conda list
 
 ## Running `app.py`
 
