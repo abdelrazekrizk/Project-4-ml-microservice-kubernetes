@@ -7,8 +7,8 @@ import pandas as pd
 from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
-import socket
-import sys
+#import socket
+#import sys
 
 # Create a TCP/IP socket
 #sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
