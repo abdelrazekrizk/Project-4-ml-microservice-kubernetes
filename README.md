@@ -89,27 +89,32 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
         Output
          # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
-                        #
                         # Name                    Version                   Build  Channel
                         _libgcc_mutex             0.1                        main  
                         _openmp_mutex             4.5                       1_gnu  
+                        astroid                   2.8.3                    pypi_0    pypi
                         ca-certificates           2021.9.30            h06a4308_1  
                         certifi                   2021.5.30        py36h06a4308_0  
                         click                     7.0                      pypi_0    pypi
                         flask                     1.0.2                    pypi_0    pypi
+                        isort                     5.9.3                    pypi_0    pypi
                         itsdangerous              1.1.0                    pypi_0    pypi
                         jinja2                    2.10.3                   pypi_0    pypi
+                        lazy-object-proxy         1.6.0                    pypi_0    pypi
                         libedit                   3.1.20210714         h7f8727e_0  
                         libffi                    3.2.1             hf484d3e_1007  
                         libgcc-ng                 9.3.0               h5101ec6_17  
                         libgomp                   9.3.0               h5101ec6_17  
                         libstdcxx-ng              9.3.0               hd4cf53a_17  
                         markupsafe                1.1.1                    pypi_0    pypi
+                        mccabe                    0.6.1                    pypi_0    pypi
                         ncurses                   6.2                  he6710b0_1  
                         numpy                     1.17.2                   pypi_0    pypi
                         openssl                   1.1.1l               h7f8727e_0  
                         pandas                    0.24.2                   pypi_0    pypi
                         pip                       21.3                     pypi_0    pypi
+                        platformdirs              2.4.0                    pypi_0    pypi
+                        pylint                    2.11.1                   pypi_0    pypi
                         python                    3.6.9                h265db76_0  
                         python-dateutil           2.8.0                    pypi_0    pypi
                         pytz                      2019.3                   pypi_0    pypi
@@ -120,11 +125,14 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
                         six                       1.12.0                   pypi_0    pypi
                         sqlite                    3.33.0               h62c20be_0  
                         tk                        8.6.11               h1ccaba5_0  
+                        toml                      0.10.2                   pypi_0    pypi
+                        typed-ast                 1.4.3                    pypi_0    pypi
+                        typing-extensions         3.10.0.2                 pypi_0    pypi
                         werkzeug                  0.16.0                   pypi_0    pypi
                         wheel                     0.37.0             pyhd3eb1b0_1  
+                        wrapt                     1.13.2                   pypi_0    pypi
                         xz                        5.2.5                h7b6447c_0  
                         zlib                      1.2.11               h7b6447c_3 
-
 
 
 ## Kubernetes Steps

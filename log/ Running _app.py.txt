@@ -8,3 +8,5 @@
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 308-117-624
+196.218.217.223 - - [18/Oct/2021 22:50:16] "GET / HTTP/1.1" 200 -
+196.218.217.223 - - [18/Oct/2021 22:50:49] "GET / HTTP/1.1" 200 -
