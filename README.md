@@ -126,11 +126,6 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
                         zlib                      1.2.11               h7b6447c_3 
 
 
-## Running `app.py`
-
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
 
 ## Kubernetes Steps
 
@@ -276,3 +271,9 @@ Verify hadolint
 
              Output
              Haskell Dockerfile Linter 2.7.0-no-git
+
+## Running `app.py`
+
+1. Standalone:  `python app.py`
+2. Run in Docker:  `./run_docker.sh`
+3. Run in Kubernetes:  `./run_kubernetes.sh`             
