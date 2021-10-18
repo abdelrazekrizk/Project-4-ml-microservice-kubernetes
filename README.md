@@ -61,6 +61,45 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
          $ conda activate .devops
 
+         $ conda list
+
+         # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
+                        #
+                        # Name                    Version                   Build  Channel
+                        _libgcc_mutex             0.1                        main  
+                        _openmp_mutex             4.5                       1_gnu  
+                        ca-certificates           2021.9.30            h06a4308_1  
+                        certifi                   2021.5.30        py36h06a4308_0  
+                        click                     7.0                      pypi_0    pypi
+                        flask                     1.0.2                    pypi_0    pypi
+                        itsdangerous              1.1.0                    pypi_0    pypi
+                        jinja2                    2.10.3                   pypi_0    pypi
+                        libedit                   3.1.20210714         h7f8727e_0  
+                        libffi                    3.2.1             hf484d3e_1007  
+                        libgcc-ng                 9.3.0               h5101ec6_17  
+                        libgomp                   9.3.0               h5101ec6_17  
+                        libstdcxx-ng              9.3.0               hd4cf53a_17  
+                        markupsafe                1.1.1                    pypi_0    pypi
+                        ncurses                   6.2                  he6710b0_1  
+                        numpy                     1.17.2                   pypi_0    pypi
+                        openssl                   1.1.1l               h7f8727e_0  
+                        pandas                    0.24.2                   pypi_0    pypi
+                        pip                       21.3                     pypi_0    pypi
+                        python                    3.6.9                h265db76_0  
+                        python-dateutil           2.8.0                    pypi_0    pypi
+                        pytz                      2019.3                   pypi_0    pypi
+                        readline                  7.0                  h7b6447c_5  
+                        scikit-learn              0.20.3                   pypi_0    pypi
+                        scipy                     1.3.1                    pypi_0    pypi
+                        setuptools                58.0.4           py36h06a4308_0  
+                        six                       1.12.0                   pypi_0    pypi
+                        sqlite                    3.33.0               h62c20be_0  
+                        tk                        8.6.11               h1ccaba5_0  
+                        werkzeug                  0.16.0                   pypi_0    pypi
+                        wheel                     0.37.0             pyhd3eb1b0_1  
+                        xz                        5.2.5                h7b6447c_0  
+                        zlib                      1.2.11               h7b6447c_3 
+
 * Run `make install` to install the necessary dependencies:
 * install make:
 
@@ -69,6 +108,13 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 * Verify make version:
 
          $ make --version
+
+         GNU Make 4.2.1
+                Built for x86_64-pc-linux-gnu
+                Copyright (C) 1988-2016 Free Software Foundation, Inc.
+                License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+                This is free software: you are free to change and redistribute it.
+                There is NO WARRANTY, to the extent permitted by law.
 
 * Install requirements
 
@@ -123,6 +169,49 @@ https://docs.docker.com/engine/install/ubuntu/
 
            $ docker version
 
+            Output
+            Client: Docker Engine - Community
+                                        Version:           20.10.9
+                                        API version:       1.41
+                                        Go version:        go1.16.8
+                                        Git commit:        c2ea9bc
+                                        Built:             Mon Oct  4 16:08:29 2021
+                                        OS/Arch:           linux/amd64
+                                        Context:           default
+                                        Experimental:      true
+
+                                        Server: Docker Engine - Community
+                                        Engine:
+                                        Version:          20.10.9
+                                        API version:      1.41 (minimum version 1.12)
+                                        Go version:       go1.16.8
+                                        Git commit:       79ea9d3
+                                        Built:            Mon Oct  4 16:06:37 2021
+                                        OS/Arch:          linux/amd64
+                                        Experimental:     false
+                                        containerd:
+                                        Version:          1.4.11
+                                        GitCommit:        5b46e404f6b9f661a205e28d59c982d3634148f8
+                                        runc:
+                                        Version:          1.0.2
+                                        GitCommit:        v1.0.2-0-g52b36a2
+                                        docker-init:
+                                        Version:          0.19.0
+                                        GitCommit:        de40ad0
+
+Troubleshooting Docker :
+ 
+ * Error
+            Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied
+
+         $ sudo chmod 666 /var/run/docker.sock
+
+         $ sudo usermod -aG docker ${USER}
+
+         # $ newgrp docker
+
+
+
 * Create Flask app Docker Images:
 
            $ . ./run_docker.sh
@@ -159,6 +248,9 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
            $ kubectl version --short --client
 
+           Output 
+           Client Version: v1.21.2-13+d2965f0db10712
+
 * Create Flask app in Container:
 
 * Run via kubectl:
@@ -178,6 +270,5 @@ Verify hadolint
 
              $ hadolint --version
 
-             out put
-
+             Output
              Haskell Dockerfile Linter 2.7.0-no-git
