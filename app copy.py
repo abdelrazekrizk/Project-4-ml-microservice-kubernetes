@@ -16,7 +16,7 @@ import sys
 # Bind the socket to the port
 #server_address = ('localhost', 80)
 # print >>sys.stderr, 'starting up on %s port %s' % server_address
-# sock.bind(server_address)
+#sock.bind(server_address)
 
 app = Flask(__name__)
 LOG = create_logger(app)
@@ -24,7 +24,6 @@ LOG.setLevel(logging.INFO)
 
 #os.path.append('/home/ubuntu/miniconda3/envs/.devops/lib/python3.6/site-packages')
 path = ('/home/ubuntu/miniconda3/envs/.devops/lib/python3.6/site-packages/')
-
 def scale(payload):
     """Scales Payload"""
 
@@ -85,4 +84,44 @@ def predict():
 if __name__ == "__main__":
     # load pretrained model as clf
     clf = joblib.load("./model_data/boston_housing_prediction.joblib")
-    app.run(host='0.0.0.0', port=8081, debug=True) # specify port=8081
+    
+
+# if set, let env vars override previous values
+if 'FLASK_ENV' in os.environ:
+    self.env = get_env()
+    self.debug = get_debug_flag()
+elif 'FLASK_DEBUG' in os.environ:
+    self.debug = get_debug_flag()
+
+# debug passed to method overrides all other sources
+if debug is not None:
+   self.debug = bool(debug)
+
+_host = '127.0.0.1'
+_port = 80
+server_name = self.config.get('SERVER_NAME')
+sn_host, sn_port = None, None
+
+if server_name:
+   sn_host, _, sn_port = server_name.partition(':')
+
+host = host or sn_host or _host
+port = int(port or sn_port or _port)
+
+options.setdefault('use_reloader', self.debug)
+options.setdefault('use_debugger', self.debug)
+options.setdefault('threaded', True)
+
+cli.show_server_banner(self.env, self.debug, self.name, False)
+
+from werkzeug.serving import run_simple
+
+try:
+    run_simple(host, port, self, **options)
+finally:
+# reset the first request information if the development server
+# reset normally.  This makes it possible to restart the server
+# without reloader and that stuff from an interactive shell.
+        self._got_first_request = False
+
+
