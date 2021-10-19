@@ -5,7 +5,7 @@
 # Step 1:
 # This is your Docker ID/path
 # dockerpath=<>
-dockerpath="abdelrazekrizk/flask_prediction:version1.0"
+dockerpath="abdelrazekrizk/flask_prediction:latest"
 
 # Step 2
 # Run the Docker Hub container with kubernetes
@@ -27,4 +27,4 @@ kubectl port-forward service/flask_prediction:version1.0 80:8080
 # Step 4:
 # dump pod logs, with label name=myLabel (stdout)
 #kubectl: export pod logs to file
-kubectl logs -l name=flask_prediction:version1.0 > /work/Project-4-ml-microservice-kubernetes/log/flask_prediction_pod.log
+kubectl logs -l name=flask_prediction:version1.0 > ./log/flask_prediction_pod.log

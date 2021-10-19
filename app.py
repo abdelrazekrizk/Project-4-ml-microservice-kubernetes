@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
 import logging
@@ -69,4 +70,5 @@ def predict():
 if __name__ == "__main__":
     # load pretrained model as clf
     clf = joblib.load("./model_data/boston_housing_prediction.joblib")
-    app.run(host='0.0.0.0', port=80, debug=True) # specify port=80
+    # app.run(host='0.0.0.0', port=80, debug=True) # specify port=80
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 80)))
