@@ -23,6 +23,6 @@ docker ps -a
 # Run flask app 
 #docker run -p 127.0.0.1:8080:80/tcp flask_prediction
 docker run \
---name Flask_App \
+--name flaskapp \
 -p 8080:80/tcp \
 abdelrazekrizk/flask_prediction

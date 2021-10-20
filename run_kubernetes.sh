@@ -9,23 +9,30 @@ dockerpath="abdelrazekrizk/flask_prediction"
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run flaskpredictiondemo \
---image=$dockerpath \
---generator=run-pod/v1 \
---labels="app=flaskpredictiondemo,env=prod" \
---env="DNS_DOMAIN=cluster" \
---env="POD_NAMESPACE=default" \
---port=80
+kubectl run flaskprediction \
+    --image=$dockerpath 
 
-# Step 3:
+# Step 3
+# #Creating a service Expose the kubectl pod container port=80 ,port=8080
+kubectl expose pod flaskprediction \
+--port=80 \
+--port=8080 \
+--external-ip=172.0.0.1 \
+--name=flaskapp   
+
+# Step 4
+# Wait until your pod is running, check for "condition=ready"
+kubectl wait --for=condition=Ready pod/flaskprediction
+
+# Step 5:
 # List kubernetes pods
 kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'
 
-# Step 4:
-# Forward the container port to a host
-kubectl port-forward service/flaskpredictiondemo 80:8080
-
-# Step 4:
+# Step 6:
 # dump pod logs, with label name=myLabel (stdout)
 #kubectl: export pod logs to file
-kubectl logs -l name=flaskpredictiondemo > ./log/flask_prediction_pod.log
+kubectl logs pod/flaskprediction 
+
+# Step 7:
+# Forward the container port to a host
+kubectl port-forward service/flaskapp :8080
