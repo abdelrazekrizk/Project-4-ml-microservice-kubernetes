@@ -11,8 +11,7 @@ dockerpath="abdelrazekrizk/flask_prediction"
 # Step 2:  
 # Authenticate & tag
 #docker tag local-image:tagname new-repo:tagname
-docker login -u abdelrazekrizk \
-docker tag flask_prediction:latest abdelrazekrizk/flask_prediction:version1.0 \
+docker login -u abdelrazekrizk
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:

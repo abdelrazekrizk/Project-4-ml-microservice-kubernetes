@@ -1,6 +1,6 @@
-# CircleCI status badge
 
 [![CircleCI](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main.svg?style=svg)](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main)
+
 
 # Project Overview
 
@@ -268,6 +268,98 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
            $ . ./run_kubernetes.sh
 
 #  Test  project code using hadolint 
+
+# Installation minikube
+
+           $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
+
+           $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+* Start your cluster
+
+           $ Start your cluster
+             
+             Output
+             ubuntu@ip-172-31-27-175:~$ minikube start
+
+                😄  minikube v1.23.2 on Ubuntu 20.04
+                ✨  Automatically selected the docker driver. Other choices: none, ssh
+                👍  Starting control plane node minikube in cluster minikube
+                🚜  Pulling base image ...
+                💾  Downloading Kubernetes v1.22.2 preload ...
+                > preloaded-images-k8s-v13-v1...: 511.69 MiB / 511.69 MiB  100.00% 173.76 M
+                > gcr.io/k8s-minikube/kicbase: 355.39 MiB / 355.40 MiB  100.00% 44.06 MiB p
+                🔥  Creating docker container (CPUs=2, Memory=3800MB) ...| Installati
+                🐳  Preparing Kubernetes v1.22.2 on Docker 20.10.8 ...
+                ▪ Generating certificates and keys ...
+                ▪ Booting up control plane ...
+                ▪ Configuring RBAC rules ...
+                🔎  Verifying Kubernetes components...
+                ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+                🌟  Enabled addons: default-storageclass, storage-provisioner
+                🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+                $ kubectl cluster-info
+
+                        Output
+                        Kubernetes control plane is running at https://192.168.49.2:8443
+                        CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+                        To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+                $ minikube dashboard
+                       
+                        Output            
+                        🔌  Enabling dashboard ...
+                        ▪ Using image kubernetesui/dashboard:v2.3.1
+                        ▪ Using image kubernetesui/metrics-scraper:v1.0.7
+                        🤔  Verifying dashboard health ...
+                        🚀  Launching proxy ...
+                        🤔  Verifying proxy health ...
+                        🎉  Opening http://127.0.0.1:36001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+                        👉  http://127.0.0.1:36001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+
+                $ kubectl get nodes
+
+                        Output 
+                        NAME       STATUS   ROLES                  AGE   VERSION
+                        minikube   Ready    control-plane,master   23m   v1.22.2
+
+                $ kubectl config view
+                
+                        Output
+                        apiVersion: v1
+                        clusters:
+                        - cluster:
+                        certificate-authority: /home/ubuntu/.minikube/ca.crt
+                        extensions:
+                        - extension:
+                                last-update: Tue, 19 Oct 2021 22:01:47 UTC
+                                provider: minikube.sigs.k8s.io
+                                version: v1.23.2
+                        name: cluster_info
+                        server: https://192.168.49.2:8443
+                        name: minikube
+                        contexts:
+                        - context:
+                        cluster: minikube
+                        extensions:
+                        - extension:
+                                last-update: Tue, 19 Oct 2021 22:01:47 UTC
+                                provider: minikube.sigs.k8s.io
+                                version: v1.23.2
+                        name: context_info
+                        namespace: default
+                        user: minikube
+                        name: minikube
+                        current-context: minikube
+                        kind: Config
+                        preferences: {}
+                        users:
+                        - name: minikube
+                        user:
+                        client-certificate: /home/ubuntu/.minikube/profiles/minikube/client.crt
+                        client-key: /home/ubuntu/.minikube/profiles/minikube/client.key        
 
 https://github.com/hadolint/hadolint/releases
 
