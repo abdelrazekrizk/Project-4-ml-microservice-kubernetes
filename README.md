@@ -1,4 +1,4 @@
-<[![CircleCI](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main.svg?style=svg)](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main)>
+[![CircleCI](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main.svg?style=svg)](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main)
 
 
 # Project Overview
