@@ -1,0 +1,115 @@
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./run_docker.sh
+
+Sending build context to Docker daemon   1.23MB
+Step 1/6 : FROM python:3.7.3-stretch
+3.7.3-stretch: Pulling from library/python
+6f2f362378c5: Pull complete 
+494c27a8a6b8: Pull complete 
+7596bb83081b: Pull complete 
+372744b62d49: Pull complete 
+615db220d76c: Pull complete 
+39aa0c89bda1: Pull complete 
+ac275157d894: Pull complete 
+98d16dec829a: Pull complete 
+c8514b1c6524: Pull complete 
+Digest: sha256:205cafadbb7f0c48f2a6d655eb100a9675aa85e6e73958860f488406cce09779
+Status: Downloaded newer image for python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Running in 6dbafbb24bbc
+Removing intermediate container 6dbafbb24bbc
+ ---> 265ee576cd88
+Step 3/6 : COPY . app.py /app/
+ ---> c20010689d33
+Step 4/6 : RUN pip install --no-cache-dir --upgrade pip &&    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in 97fd91791f76
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/90/a9/1ea3a69a51dcc679724e3512fc2aa1668999eed59976f749134eb02229c8/pip-21.3-py3-none-any.whl (1.7MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-21.3
+Collecting Click==7.0
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+Collecting Flask==1.0.2
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+Collecting itsdangerous==1.1.0
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+Collecting MarkupSafe==1.1.1
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl (33 kB)
+Collecting numpy==1.17.2
+  Downloading numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3 MB)
+Collecting pandas==0.24.2
+  Downloading pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+Collecting python-dateutil==2.8.0
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+Collecting pytz==2019.3
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+Collecting scipy==1.3.1
+  Downloading scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
+Collecting six==1.12.0
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+Collecting pylint
+  Downloading pylint-2.11.1-py3-none-any.whl (392 kB)
+Collecting astroid<2.9,>=2.8.0
+  Downloading astroid-2.8.3-py3-none-any.whl (246 kB)
+Collecting typing-extensions>=3.10.0
+  Downloading typing_extensions-3.10.0.2-py3-none-any.whl (26 kB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting platformdirs>=2.2.0
+  Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)
+Collecting isort<6,>=4.2.5
+  Downloading isort-5.9.3-py3-none-any.whl (106 kB)
+Collecting toml>=0.7.1
+  Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Collecting typed-ast<1.5,>=1.4.0
+  Downloading typed_ast-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (743 kB)
+Requirement already satisfied: setuptools>=20.0 in /usr/local/lib/python3.7/site-packages (from astroid<2.9,>=2.8.0->pylint->-r requirements.txt (line 14)) (41.0.1)
+Collecting lazy-object-proxy>=1.4.0
+  Downloading lazy_object_proxy-1.6.0-cp37-cp37m-manylinux1_x86_64.whl (55 kB)
+Collecting wrapt<1.14,>=1.11
+  Downloading wrapt-1.13.2-cp37-cp37m-manylinux2010_x86_64.whl (79 kB)
+Installing collected packages: wrapt, typing-extensions, typed-ast, six, numpy, MarkupSafe, lazy-object-proxy, Werkzeug, toml, scipy, pytz, python-dateutil, platformdirs, mccabe, Jinja2, itsdangerous, isort, Click, astroid, scikit-learn, pylint, pandas, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.8.3 isort-5.9.3 itsdangerous-1.1.0 lazy-object-proxy-1.6.0 mccabe-0.6.1 numpy-1.17.2 pandas-0.24.2 platformdirs-2.4.0 pylint-2.11.1 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 toml-0.10.2 typed-ast-1.4.3 typing-extensions-3.10.0.2 wrapt-1.13.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Removing intermediate container 97fd91791f76
+ ---> 93188c44fa22
+Step 5/6 : EXPOSE 80
+ ---> Running in a4ca1ab8f3e0
+Removing intermediate container a4ca1ab8f3e0
+ ---> 87df76df24a4
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 7eb2a7ba2568
+Removing intermediate container 7eb2a7ba2568
+ ---> fd2e9bc44020
+Successfully built fd2e9bc44020
+Successfully tagged abdelrazekrizk/flask_prediction:latest
+REPOSITORY                        TAG             IMAGE ID       CREATED                  SIZE
+abdelrazekrizk/flask_prediction   latest          fd2e9bc44020   Less than a second ago   1.19GB
+<none>                            <none>          87df76df24a4   Less than a second ago   1.19GB
+<none>                            <none>          93188c44fa22   2 seconds ago            1.19GB
+<none>                            <none>          c20010689d33   21 seconds ago           930MB
+<none>                            <none>          265ee576cd88   22 seconds ago           929MB
+gcr.io/k8s-minikube/kicbase       v0.0.27         9fa1cc16ad6d   4 weeks ago              1.08GB
+python                            3.7.3-stretch   34a518642c76   2 years ago              929MB
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                                                                                  NAMES
+da6e2e7f88f8   gcr.io/k8s-minikube/kicbase:v0.0.27   "/usr/local/bin/entr…"   21 minutes ago   Up 21 minutes   127.0.0.1:49157->22/tcp, 127.0.0.1:49156->2376/tcp, 127.0.0.1:49155->5000/tcp, 127.0.0.1:49154->8443/tcp, 127.0.0.1:49153->32443/tcp   minikube
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 220-102-922
+172.17.0.1 - - [21/Oct/2021 03:32:43] "GET / HTTP/1.1" 200 -
+209.17.97.106 - - [21/Oct/2021 03:44:54] "GET / HTTP/1.0" 200 -

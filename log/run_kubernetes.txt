@@ -1,15 +1,7 @@
-ubuntu@ip-172-31-27-175:~/Projects/Project-4-ml-microservice-kubernetes$ . ./run_kubernetes.sh
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./run_kubernetes.sh
 pod/flaskprediction created
 service/flaskapp exposed
 pod/flaskprediction condition met
 NAME              READY   STATUS    RESTARTS   AGE
 flaskprediction   1/1     Running   0          1s
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: Do not use the development server in a production environment.
-   Use a production WSGI server instead.
- * Debug mode: on
- * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
- * Restarting with stat
-Forwarding from 127.0.0.1:37267 -> 8080
-Forwarding from [::1]:37267 -> 8080
+Forwarding from [::1]:8080 -> 8080

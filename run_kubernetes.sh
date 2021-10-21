@@ -10,14 +10,13 @@ dockerpath="abdelrazekrizk/flask_prediction"
 # Step 2
 # Run the Docker Hub container with kubernetes
 kubectl run flaskprediction \
-    --image=$dockerpath
-
+    --image=$dockerpath \
+    --port=8080
 # Step 3
 # #Creating a service Expose the kubectl pod container port=80 ,port=8080
 kubectl expose pod flaskprediction \
 --port=80 \
 --port=8080 \
---external-ip=172.0.0.1 \
 --name=flaskapp
 
 # Step 4
@@ -35,4 +34,4 @@ kubectl logs pod/flaskprediction
 
 # Step 7:
 # Forward the container port to a host
-kubectl port-forward service/flaskapp :8080
+kubectl port-forward pod/flaskprediction 8080
