@@ -25,9 +25,15 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 ---
 # Setup Instance Ubuntu Server 20.04 LTS (HVM), SSD Volume Type
 
+<<<<<<< HEAD
  - using Instance type
  - m5.xlarge
  - 4 CPUs
+=======
+ - using Instance type 
+ - m5.2xlarge 
+ - 4 CPUs 
+>>>>>>> a1c1acd44addd56ae41fada3720d698fcb2a57ac
  - 16 GB memory
  - ami-09e67e426f25ce0d7
 
@@ -38,6 +44,49 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Add Public/Private Key Pair to github:
 
 # Setup the Environment
+## Setup using python3-venv
+
+         $ sudo apt-get install python3-venv
+
+                Reading package lists... Done
+                Building dependency tree       
+                Reading state information... Done
+                The following additional packages will be installed:
+                python-pip-whl python3-distutils python3-lib2to3 python3.6-venv
+                The following NEW packages will be installed:
+                python-pip-whl python3-distutils python3-lib2to3 python3-venv python3.6-venv
+                0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+                Need to get 1882 kB of archives.
+                After this operation, 5044 kB of additional disk space will be used.
+                Do you want to continue? [Y/n] y
+                Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python-pip-whl all 9.0.1-2.3~ubuntu1.18.04.5 [1653 kB]
+                Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-lib2to3 all 3.6.9-1~18.04 [77.4 kB]
+                Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distutils all 3.6.9-1~18.04 [144 kB]
+                Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3.6-venv amd64 3.6.9-1~18.04ubuntu1.4 [6188 B]
+                Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3-venv amd64 3.6.7-1~18.04 [1208 B]
+                Fetched 1882 kB in 0s (32.4 MB/s)      
+                Selecting previously unselected package python-pip-whl.
+                (Reading database ... 85429 files and directories currently installed.)
+                Preparing to unpack .../python-pip-whl_9.0.1-2.3~ubuntu1.18.04.5_all.deb ...
+                Unpacking python-pip-whl (9.0.1-2.3~ubuntu1.18.04.5) ...
+                Selecting previously unselected package python3-lib2to3.
+                Preparing to unpack .../python3-lib2to3_3.6.9-1~18.04_all.deb ...
+                Unpacking python3-lib2to3 (3.6.9-1~18.04) ...
+                Selecting previously unselected package python3-distutils.
+                Preparing to unpack .../python3-distutils_3.6.9-1~18.04_all.deb ...
+                Unpacking python3-distutils (3.6.9-1~18.04) ...
+                Selecting previously unselected package python3.6-venv.
+                Preparing to unpack .../python3.6-venv_3.6.9-1~18.04ubuntu1.4_amd64.deb ...
+                Unpacking python3.6-venv (3.6.9-1~18.04ubuntu1.4) ...
+                Selecting previously unselected package python3-venv.
+                Preparing to unpack .../python3-venv_3.6.7-1~18.04_amd64.deb ...
+                Unpacking python3-venv (3.6.7-1~18.04) ...
+                Setting up python-pip-whl (9.0.1-2.3~ubuntu1.18.04.5) ...
+                Setting up python3.6-venv (3.6.9-1~18.04ubuntu1.4) ...
+                Setting up python3-lib2to3 (3.6.9-1~18.04) ...
+                Setting up python3-distutils (3.6.9-1~18.04) ...
+                Setting up python3-venv (3.6.7-1~18.04) ...
+                Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 
 * using Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda
 
