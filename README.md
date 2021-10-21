@@ -39,14 +39,14 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 * Create a Public/Private Key Pair:
 
-         $ ssh-keygen -t rsa
+          ssh-keygen -t rsa
 
 * Add Public/Private Key Pair to github:
 
 # Setup the Environment
 ## Setup using python3-venv
 
-         $ sudo apt-get install python3-venv
+          sudo apt-get install python3-venv
 
                 Reading package lists... Done
                 Building dependency tree       
@@ -96,33 +96,33 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 * Download Latest Miniconda Installer Links for Linux installers:
 
-         $ wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
+          wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
 
  * Installing on Linux:
 
-         $ bash Miniconda3-py39_4.10.3-Linux-x86_64.sh
+          bash Miniconda3-py39_4.10.3-Linux-x86_64.sh
 
-         $ . .bashrc
+          . .bashrc
 
-         $ conda config --set auto_activate_base false
+          conda config --set auto_activate_base false
 
 * Create a virtualenv and activate it:
 
-         $ conda create --name .devops Python=3.6.9
+          conda create --name .devops Python=3.6.9
 
-         $ conda activate .devops
+          conda activate .devops
 
-         $ conda list
+          conda list
 
 
 * Run `make install` to install the necessary dependencies:
 * install make:
 
-         $ sudo apt install make
+          sudo apt install make
 
 * Verify make version:
 
-         $ make --version
+          make --version
 
          Output
          GNU Make 4.2.1
@@ -134,9 +134,9 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 * Install requirements
 
-         $ make install
+          make install
 
-         $ conda list
+          conda list
 
         Output
          # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
@@ -197,12 +197,12 @@ https://docs.docker.com/engine/install/ubuntu/
 
 * update instance
 
-         $ sudo apt update
-         $ sudo apt upgrade -y
+          sudo apt update
+          sudo apt upgrade -y
 
 * Update the apt package:
 
-         $ sudo apt-get install \
+          sudo apt-get install \
             apt-transport-https \
             ca-certificates \
             curl \
@@ -211,22 +211,22 @@ https://docs.docker.com/engine/install/ubuntu/
 
 * Add Docker’s official GPG key:
 
-          $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 * Use the following command to set up the stable repository
 
-          $ echo \
-                "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-                $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+           echo \
+                "deb [arch=(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+                (lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 * Install Docker Engine:
 
-          $ sudo apt-get update
-          $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+           sudo apt-get update
+           sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 * Verify Docker version:
 
-           $ docker version
+            docker version
 
             Output
             Client: Docker Engine - Community
@@ -263,17 +263,17 @@ Troubleshooting Docker :
  * Error
             Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied
 
-         $ sudo chmod 666 /var/run/docker.sock
+          sudo chmod 666 /var/run/docker.sock
 
-         $ sudo usermod -aG docker ${USER}
+          sudo usermod -aG docker {USER}
 
-         # $ newgrp docker
+         #  newgrp docker
 
 
 
 * Create Flask app Docker Images:
 
-           $ . ./run_docker.sh
+            . ./run_docker.sh
 
 
 * Setup and Configure Kubernetes locally:
@@ -285,27 +285,27 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 * Download the Amazon EKS vended kubectl binary for your cluster's Kubernetes version from Amazon S3:
 * Kubernetes 1.21:
 
-           $ curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+            curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
 
 * Verify the downloaded binary with the SHA-256 sum for your binary:
 
-           $ openssl sha1 -sha256 kubectl
+            openssl sha1 -sha256 kubectl
 
 * Apply execute permissions to the binary:
 
-           $ chmod +x ./kubectl
+            chmod +x ./kubectl
 
 * Copy the binary to a folder in your PATH. If you have already installed a version of kubectl:
 
-           $ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+            mkdir -p HOME/bin && cp ./kubectl HOME/bin/kubectl && export PATH=PATH:HOME/bin
 
-*  Add the $HOME/bin path to your shell initialization file:
+*  Add the HOME/bin path to your shell initialization file:
 
-           $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+            echo 'export PATH=PATH:HOME/bin' >> ~/.bashrc
 
 * Verify kubectl version:
 
-           $ kubectl version --short --client
+            kubectl version --short --client
 
            Output
            Client Version: v1.21.2-13+d2965f0db10712
@@ -314,22 +314,22 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 * Run via kubectl:
 
-           $ . ./run_kubernetes.sh
+            . ./run_kubernetes.sh
 
 #  Test  project code using hadolint
 
 # Installation minikube
 
-           $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+                curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+                sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
-           $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 * Start your cluster
 
-           $ Start your cluster
+            Start your cluster
 
              Output
-             ubuntu@ip-172-31-27-175:~$ minikube start
+             ubuntu@ip-172-31-27-175:~ minikube start
 
                 😄  minikube v1.23.2 on Ubuntu 20.04
                 ✨  Automatically selected the docker driver. Other choices: none, ssh
@@ -348,7 +348,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
                 🌟  Enabled addons: default-storageclass, storage-provisioner
                 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 
-                $ kubectl cluster-info
+                kubectl cluster-info
 
                         Output
                         Kubernetes control plane is running at https://192.168.49.2:8443
@@ -356,7 +356,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
                         To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
-                $ minikube dashboard
+                  minikube dashboard
 
                         Output
                         🔌  Enabling dashboard ...
@@ -368,13 +368,13 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
                         🎉  Opening http://127.0.0.1:36001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
                         👉  http://127.0.0.1:36001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
 
-                $ kubectl get nodes
+                  kubectl get nodes
 
                         Output
                         NAME       STATUS   ROLES                  AGE   VERSION
                         minikube   Ready    control-plane,master   23m   v1.22.2
 
-                $ kubectl config view
+                  kubectl config view
 
                         Output
                         apiVersion: v1
@@ -414,12 +414,12 @@ https://github.com/hadolint/hadolint/releases
 
 * Install hadolint
 
-            $ sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.7.0/hadolint-Linux-x86_64 && sudo chmod +x /bin/hadolint
+              sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.7.0/hadolint-Linux-x86_64 && sudo chmod +x /bin/hadolint
 
 
 Verify hadolint
 
-             $ hadolint --version
+              hadolint --version
 
              Output
              Haskell Dockerfile Linter 2.7.0-no-git
