@@ -1,0 +1,38 @@
+* 
+* ==> Audit <==
+* |---------|------|----------|--------|---------|-------------------------------|-------------------------------|
+| Command | Args | Profile  |  User  | Version |          Start Time           |           End Time            |
+|---------|------|----------|--------|---------|-------------------------------|-------------------------------|
+| start   |      | minikube | ubuntu | v1.23.2 | Thu, 21 Oct 2021 03:05:25 UTC | Thu, 21 Oct 2021 03:06:41 UTC |
+|---------|------|----------|--------|---------|-------------------------------|-------------------------------|
+
+* 
+* ==> Last Start <==
+* Log file created at: 2021/10/21 17:27:47
+Running on machine: ip-172-31-22-124
+Binary: Built with gc go1.17.1 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I1021 17:27:47.942833    5862 out.go:298] Setting OutFile to fd 1 ...
+I1021 17:27:47.943047    5862 out.go:350] isatty.IsTerminal(1) = true
+I1021 17:27:47.943051    5862 out.go:311] Setting ErrFile to fd 2...
+I1021 17:27:47.943058    5862 out.go:350] isatty.IsTerminal(2) = true
+I1021 17:27:47.943998    5862 root.go:313] Updating PATH: /home/ubuntu/.minikube/bin
+W1021 17:27:47.944105    5862 root.go:291] Error reading config file at /home/ubuntu/.minikube/config/config.json: open /home/ubuntu/.minikube/config/config.json: no such file or directory
+I1021 17:27:47.944207    5862 out.go:305] Setting JSON to false
+I1021 17:27:47.966658    5862 start.go:111] hostinfo: {"hostname":"ip-172-31-22-124","uptime":4018,"bootTime":1634833250,"procs":170,"os":"linux","platform":"ubuntu","platformFamily":"debian","platformVersion":"18.04","kernelVersion":"5.4.0-1058-aws","kernelArch":"x86_64","virtualizationSystem":"","virtualizationRole":"","hostId":"ec21cb05-9dd7-b4fc-f3e7-a5cd899a9e22"}
+I1021 17:27:47.966715    5862 start.go:121] virtualization:  
+I1021 17:27:47.969256    5862 out.go:177] 😄  minikube v1.23.2 on Ubuntu 18.04
+I1021 17:27:47.969378    5862 notify.go:169] Checking for updates...
+I1021 17:27:47.972239    5862 config.go:177] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.22.2
+I1021 17:27:47.974832    5862 driver.go:343] Setting default libvirt URI to qemu:///system
+W1021 17:27:48.332048    5862 docker.go:108] docker version returned error: exit status 1
+I1021 17:27:48.334045    5862 out.go:177] ✨  Using the docker driver based on existing profile
+I1021 17:27:48.334072    5862 start.go:278] selected driver: docker
+I1021 17:27:48.334077    5862 start.go:751] validating driver "docker" against &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.27@sha256:89b4738ee74ba28684676e176752277f0db46f57d27f0e08c3feec89311e22de Memory:7900 CPUs:2 DiskSize:20000 VMDriver: Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.99.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.22.2 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin: FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name: IP:192.168.49.2 Port:8443 KubernetesVersion:v1.22.2 ControlPlane:true Worker:true}] Addons:map[default-storageclass:true storage-provisioner:true] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: MultiNodeRequested:false ExtraDisks:0}
+I1021 17:27:48.334149    5862 start.go:762] status for docker: {Installed:true Healthy:false Running:true NeedsImprovement:false Error:"docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%!F(MISSING)var%!F(MISSING)run%!F(MISSING)docker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied Reason:PROVIDER_DOCKER_NEWGRP Fix:Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' Doc:https://docs.docker.com/engine/install/linux-postinstall/}
+I1021 17:27:48.336445    5862 out.go:177] 
+W1021 17:27:48.336559    5862 out.go:242] 💣  Exiting due to PROVIDER_DOCKER_NEWGRP: "docker version --format -" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%!F(MISSING)var%!F(MISSING)run%!F(MISSING)docker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied
+W1021 17:27:48.336657    5862 out.go:242] 💡  Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker'
+W1021 17:27:48.336711    5862 out.go:242] 📘  Documentation: https://docs.docker.com/engine/install/linux-postinstall/
+
+* 
