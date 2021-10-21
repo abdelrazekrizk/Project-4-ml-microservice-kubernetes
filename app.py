@@ -1,12 +1,14 @@
-from flask import Flask, jsonify, request
 import logging
+from flask import
+from flask import jsonify
+from flask import request
 from flask.logging import create_logger
 
 
 import pandas as pd
-import sklearn
-from sklearn.externals import joblib
-from sklearn.preprocessing import StandardScaler
+import scikit-learn
+from scikit-learn.externals import joblib
+from scikit-learn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 LOG = create_logger(app)
@@ -72,5 +74,3 @@ if __name__ == "__main__":
     # load pretrained model as clf
     clf = joblib.load("./model_data/boston_housing_prediction.joblib")
     app.run(host='0.0.0.0', port=80, debug=True) # specify port=80
-
-
