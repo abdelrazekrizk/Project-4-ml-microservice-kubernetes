@@ -24,16 +24,9 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 **The final implementation of the project will showcase your abilities to operationalize production microservices.**
 ---
 # Setup Instance Ubuntu Server 20.04 LTS (HVM), SSD Volume Type
-
-<<<<<<< HEAD
- - using Instance type
- - m5.xlarge
- - 4 CPUs
-=======
  - using Instance type 
  - m5.2xlarge 
  - 4 CPUs 
->>>>>>> a1c1acd44addd56ae41fada3720d698fcb2a57ac
  - 16 GB memory
  - ami-09e67e426f25ce0d7
 
@@ -88,7 +81,7 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
                 Setting up python3-venv (3.6.7-1~18.04) ...
                 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 
-* using Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda
+## Setup using Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda
 
 https://docs.conda.io/en/latest/miniconda.html#linux-installers
 
