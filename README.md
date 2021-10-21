@@ -298,7 +298,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 * Verify kubectl version:
 
-            kubectl version --short --client
+           kubectl version --short --client
 
            Output
            Client Version: v1.21.2-13+d2965f0db10712
@@ -423,7 +423,7 @@ Verify hadolint
              ./Dockerfile:14 DL3042 warning: Avoid use of cache directory with pip. Use `pip install --no-cache-dir <package>`
 
              make lint
-                  
+
                   Output
                   # See local hadolint install instructions:   https://github.com/hadolint/hadolint
                   # This is linter for Dockerfiles
@@ -435,8 +435,94 @@ Verify hadolint
                   ------------------------------------
                   Your code has been rated at 10.00/10
 
+# Using the CircleCI Local CLI
+
+## Installation
+
+            sudo curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh |sudo  bash
+
+            Output
+            Starting installation.
+            Installing CircleCI CLI v0.1.16122
+            Installing to /usr/local/bin
+            /usr/local/bin/circleci
+
+* Updating the legacy CLI
+
+            circleci update
+
+            Output
+            Already up-to-date.
+
+* Configuring the CLI
+
+            circleci switch
+
+            Output
+            You've already updated to the latest CLI. Please see `circleci help` for usage.
+
+* Validate a CircleCI config
+
+            circleci config validate
+
+            Output
+            Config file at .circleci/config.yml is valid.
+
+* Configuring the CLI
+
+            circleci setup
+
+            Output
+            ? CircleCI API Token ****************************************
+            API token has been set.
+            ? CircleCI Host https://circleci.com
+            CircleCI host has been set.
+            Setup complete.
+            Your configuration has been saved to /home/ubuntu/.circleci/cli.yml.
+
+            Trying an introspection query on API to verify your setup... Ok.
+            Trying to query our API for your profile name... Hello, Abdelrazek Rizk.
+
+
+
 ## Running `app.py`
 
+
 1. Standalone:  `python app.py`
+- can not run app.py port 80
+
 2. Run in Docker:  `./run_docker.sh`
+
+* config
+- make_prediction.sh
+
+PORT=8080
+localhost=0.0.0.0
+
+* config
+- run_kubernetes.sh
+
+PORT=8080
+
+* config
+- app.py
+ app.run(host='0.0.0.0', port=8080, debug=True)
+
 3. Run in Kubernetes:  `./run_kubernetes.sh`
+
+* config
+- make_prediction.sh
+
+PORT=8000
+localhost=0.0.0.0
+
+* config
+- run_kubernetes.sh
+
+PORT=8080
+
+* config
+- app.py
+
+app.run(host='0.0.0.0', port=8000, debug=True)
+
