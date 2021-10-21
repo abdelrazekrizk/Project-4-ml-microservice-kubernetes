@@ -294,7 +294,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 *  Add the HOME/bin path to your shell initialization file:
 
-            echo 'export PATH=PATH:HOME/bin' >> ~/.bashrc
+           echo 'export PATH=PATH:HOME/bin' >> ~/.bashrc
 
 * Verify kubectl version:
 
@@ -313,8 +313,8 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 # Installation minikube
 
-                curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-                sudo install minikube-linux-amd64 /usr/local/bin/minikube
+            curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+            sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 
 * Start your cluster
