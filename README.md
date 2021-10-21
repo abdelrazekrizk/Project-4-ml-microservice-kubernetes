@@ -4,7 +4,7 @@
 
 # Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API.
 
 You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
@@ -25,9 +25,9 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 ---
 # Setup Instance Ubuntu Server 20.04 LTS (HVM), SSD Volume Type
 
- - using Instance type 
- - m5.xlarge 
- - 4 CPUs 
+ - using Instance type
+ - m5.xlarge
+ - 4 CPUs
  - 16 GB memory
  - ami-09e67e426f25ce0d7
 
@@ -48,12 +48,12 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 * Download Latest Miniconda Installer Links for Linux installers:
 
          $ wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
- 
+
  * Installing on Linux:
 
          $ bash Miniconda3-py39_4.10.3-Linux-x86_64.sh
 
-         $ . .bashrc 
+         $ . .bashrc
 
          $ conda config --set auto_activate_base false
 
@@ -65,7 +65,7 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
          $ conda list
 
-         
+
 * Run `make install` to install the necessary dependencies:
 * install make:
 
@@ -74,7 +74,7 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 * Verify make version:
 
          $ make --version
-         
+
          Output
          GNU Make 4.2.1
                 Built for x86_64-pc-linux-gnu
@@ -92,11 +92,11 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
         Output
          # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
                 # Name                    Version                   Build  Channel
-                _libgcc_mutex             0.1                        main  
-                _openmp_mutex             4.5                       1_gnu  
+                _libgcc_mutex             0.1                        main
+                _openmp_mutex             4.5                       1_gnu
                 astroid                   2.8.3                    pypi_0    pypi
-                ca-certificates           2021.9.30            h06a4308_1  
-                certifi                   2021.5.30        py36h06a4308_0  
+                ca-certificates           2021.9.30            h06a4308_1
+                certifi                   2021.5.30        py36h06a4308_0
                 click                     7.0                      pypi_0    pypi
                 curl2requests             1.2                      pypi_0    pypi
                 flask                     1.0.2                    pypi_0    pypi
@@ -104,38 +104,38 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
                 itsdangerous              1.1.0                    pypi_0    pypi
                 jinja2                    2.10.3                   pypi_0    pypi
                 lazy-object-proxy         1.6.0                    pypi_0    pypi
-                libedit                   3.1.20210714         h7f8727e_0  
-                libffi                    3.2.1             hf484d3e_1007  
-                libgcc-ng                 9.3.0               h5101ec6_17  
-                libgomp                   9.3.0               h5101ec6_17  
-                libstdcxx-ng              9.3.0               hd4cf53a_17  
+                libedit                   3.1.20210714         h7f8727e_0
+                libffi                    3.2.1             hf484d3e_1007
+                libgcc-ng                 9.3.0               h5101ec6_17
+                libgomp                   9.3.0               h5101ec6_17
+                libstdcxx-ng              9.3.0               hd4cf53a_17
                 markupsafe                1.1.1                    pypi_0    pypi
                 mccabe                    0.6.1                    pypi_0    pypi
-                ncurses                   6.2                  he6710b0_1  
+                ncurses                   6.2                  he6710b0_1
                 numpy                     1.17.2                   pypi_0    pypi
-                openssl                   1.1.1l               h7f8727e_0  
+                openssl                   1.1.1l               h7f8727e_0
                 pandas                    0.24.2                   pypi_0    pypi
                 pip                       21.3                     pypi_0    pypi
                 platformdirs              2.4.0                    pypi_0    pypi
                 pylint                    2.11.1                   pypi_0    pypi
-                python                    3.6.9                h265db76_0  
+                python                    3.6.9                h265db76_0
                 python-dateutil           2.8.0                    pypi_0    pypi
                 pytz                      2019.3                   pypi_0    pypi
-                readline                  7.0                  h7b6447c_5  
+                readline                  7.0                  h7b6447c_5
                 scikit-learn              0.20.3                   pypi_0    pypi
                 scipy                     1.3.1                    pypi_0    pypi
-                setuptools                58.0.4           py36h06a4308_0  
+                setuptools                58.0.4           py36h06a4308_0
                 six                       1.12.0                   pypi_0    pypi
-                sqlite                    3.33.0               h62c20be_0  
-                tk                        8.6.11               h1ccaba5_0  
+                sqlite                    3.33.0               h62c20be_0
+                tk                        8.6.11               h1ccaba5_0
                 toml                      0.10.2                   pypi_0    pypi
                 typed-ast                 1.4.3                    pypi_0    pypi
                 typing-extensions         3.10.0.2                 pypi_0    pypi
                 werkzeug                  0.16.0                   pypi_0    pypi
-                wheel                     0.37.0             pyhd3eb1b0_1  
+                wheel                     0.37.0             pyhd3eb1b0_1
                 wrapt                     1.13.2                   pypi_0    pypi
-                xz                        5.2.5                h7b6447c_0  
-                zlib                      1.2.11               h7b6447c_3  
+                xz                        5.2.5                h7b6447c_0
+                zlib                      1.2.11               h7b6447c_3
 
 
 ## Kubernetes Steps
@@ -169,7 +169,7 @@ https://docs.docker.com/engine/install/ubuntu/
           $ echo \
                 "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
                 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  
+
 * Install Docker Engine:
 
           $ sudo apt-get update
@@ -210,7 +210,7 @@ https://docs.docker.com/engine/install/ubuntu/
                                         GitCommit:        de40ad0
 
 Troubleshooting Docker :
- 
+
  * Error
             Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied
 
@@ -258,7 +258,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
            $ kubectl version --short --client
 
-           Output 
+           Output
            Client Version: v1.21.2-13+d2965f0db10712
 
 * Create Flask app in Container:
@@ -267,18 +267,18 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
            $ . ./run_kubernetes.sh
 
-#  Test  project code using hadolint 
+#  Test  project code using hadolint
 
 # Installation minikube
 
-           $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
+           $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
            $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 * Start your cluster
 
            $ Start your cluster
-             
+
              Output
              ubuntu@ip-172-31-27-175:~$ minikube start
 
@@ -308,8 +308,8 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
                         To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
                 $ minikube dashboard
-                       
-                        Output            
+
+                        Output
                         🔌  Enabling dashboard ...
                         ▪ Using image kubernetesui/dashboard:v2.3.1
                         ▪ Using image kubernetesui/metrics-scraper:v1.0.7
@@ -321,12 +321,12 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
                 $ kubectl get nodes
 
-                        Output 
+                        Output
                         NAME       STATUS   ROLES                  AGE   VERSION
                         minikube   Ready    control-plane,master   23m   v1.22.2
 
                 $ kubectl config view
-                
+
                         Output
                         apiVersion: v1
                         clusters:
@@ -359,7 +359,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
                         - name: minikube
                         user:
                         client-certificate: /home/ubuntu/.minikube/profiles/minikube/client.crt
-                        client-key: /home/ubuntu/.minikube/profiles/minikube/client.key        
+                        client-key: /home/ubuntu/.minikube/profiles/minikube/client.key
 
 https://github.com/hadolint/hadolint/releases
 
@@ -379,4 +379,4 @@ Verify hadolint
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`             
+3. Run in Kubernetes:  `./run_kubernetes.sh`

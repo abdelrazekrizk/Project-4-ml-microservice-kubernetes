@@ -13,7 +13,7 @@ Traceback (most recent call last):
     s.bind(server_address)
 PermissionError: [Errno 13] Permission denied
 
-what we do is 
+what we do is
 line 943, in run run_simple
 run_simple(host, port, self, **options)
 run_simple(host, port, self, debug)

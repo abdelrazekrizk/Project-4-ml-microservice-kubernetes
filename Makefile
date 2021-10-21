@@ -10,9 +10,9 @@
 
 setup:
 	# Create python virtualenv & source it
+	python3 -m venv ~/.devops2
 	# source ~/.devops/bin/activate
-	python3 -m venv ~/.devops
-
+3
 install:
 	# This should be run from inside a virtualenv
 	pip install --upgrade pip &&\

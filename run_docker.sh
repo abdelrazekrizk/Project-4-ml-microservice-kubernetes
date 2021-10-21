@@ -13,14 +13,14 @@ docker image build . -t abdelrazekrizk/flask_prediction
 
 # Step 3:
 # List docker images
-docker images -a 
+docker images -a
 
 # Step 4:
 # List running Container ID
 docker ps -a
 
-# Step 5: 
-# Run flask app 
+# Step 5:
+# Run flask app
 #docker run -p 127.0.0.1:8080:80/tcp flask_prediction
 docker run \
 --name flaskapp \

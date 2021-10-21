@@ -8,7 +8,7 @@
 # dockerpath=<your docker ID/path>
 dockerpath="abdelrazekrizk/flask_prediction"
 
-# Step 2:  
+# Step 2:
 # Authenticate & tag
 #docker tag local-image:tagname new-repo:tagname
 docker login -u abdelrazekrizk

@@ -7,16 +7,16 @@ Usage:  docker login [OPTIONS] [SERVER]
 Log in to a Docker registry
 Using default tag: latest
 The push refers to repository [docker.io/abdelrazekrizk/flask_prediction]
-18c845df5fda: Pushed 
-b11f951569c2: Pushed 
-d0e19ddb2480: Pushed 
-799a7872c8c7: Mounted from library/python 
-715450468940: Mounted from library/python 
-c9d608035aef: Mounted from library/python 
-bb9c02680a15: Mounted from library/python 
-a637c551a0da: Mounted from library/python 
-2c8d31157b81: Mounted from library/python 
-7b76d801397d: Mounted from library/python 
-f32868cde90b: Mounted from library/python 
-0db06dff9d9a: Mounted from library/python 
+18c845df5fda: Pushed
+b11f951569c2: Pushed
+d0e19ddb2480: Pushed
+799a7872c8c7: Mounted from library/python
+715450468940: Mounted from library/python
+c9d608035aef: Mounted from library/python
+bb9c02680a15: Mounted from library/python
+a637c551a0da: Mounted from library/python
+2c8d31157b81: Mounted from library/python
+7b76d801397d: Mounted from library/python
+f32868cde90b: Mounted from library/python
+0db06dff9d9a: Mounted from library/python
 latest: digest: sha256:5755539c38b1a85b04609cd9d43a19bb6e047295486c9adcf9d551860c01ab7c size: 2848
