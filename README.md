@@ -24,11 +24,11 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 **The final implementation of the project will showcase your abilities to operationalize production microservices.**
 ---
 # Setup Instance Ubuntu Server 20.04 LTS (HVM), SSD Volume Type
- - using Instance type 
- - m5.2xlarge 
- - 4 CPUs 
- - 16 GB memory
- - ami-09e67e426f25ce0d7
+ - using Instance type
+ - m5.2xlarge
+ - 8 CPUs
+ - 32 GB memory
+ - ami-0747bdcabd34c712a
 
 * Create a Public/Private Key Pair:
 
@@ -42,7 +42,7 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
           sudo apt-get install python3-venv
 
                 Reading package lists... Done
-                Building dependency tree       
+                Building dependency tree
                 Reading state information... Done
                 The following additional packages will be installed:
                 python-pip-whl python3-distutils python3-lib2to3 python3.6-venv
@@ -57,7 +57,7 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
                 Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distutils all 3.6.9-1~18.04 [144 kB]
                 Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3.6-venv amd64 3.6.9-1~18.04ubuntu1.4 [6188 B]
                 Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3-venv amd64 3.6.7-1~18.04 [1208 B]
-                Fetched 1882 kB in 0s (32.4 MB/s)      
+                Fetched 1882 kB in 0s (32.4 MB/s)
                 Selecting previously unselected package python-pip-whl.
                 (Reading database ... 85429 files and directories currently installed.)
                 Preparing to unpack .../python-pip-whl_9.0.1-2.3~ubuntu1.18.04.5_all.deb ...
@@ -309,7 +309,6 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
             . ./run_kubernetes.sh
 
-#  Test  project code using hadolint
 
 # Installation minikube
 
@@ -403,6 +402,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
                         client-certificate: /home/ubuntu/.minikube/profiles/minikube/client.crt
                         client-key: /home/ubuntu/.minikube/profiles/minikube/client.key
 
+#  Test  project code using hadolint
 https://github.com/hadolint/hadolint/releases
 
 * Install hadolint
@@ -412,10 +412,28 @@ https://github.com/hadolint/hadolint/releases
 
 Verify hadolint
 
-              hadolint --version
+             hadolint --version
 
              Output
              Haskell Dockerfile Linter 2.7.0-no-git
+
+             hadolint ./Dockerfile
+
+             Output
+             ./Dockerfile:14 DL3042 warning: Avoid use of cache directory with pip. Use `pip install --no-cache-dir <package>`
+
+             make lint
+                  
+                  Output
+                  # See local hadolint install instructions:   https://github.com/hadolint/hadolint
+                  # This is linter for Dockerfiles
+                  hadolint Dockerfile
+                  # This is a linter for Python source code linter: https://www.pylint.org/
+                  # This should be run from inside a virtualenv
+                  pylint --disable=R,C,W1203 app.py
+
+                  ------------------------------------
+                  Your code has been rated at 10.00/10
 
 ## Running `app.py`
 
