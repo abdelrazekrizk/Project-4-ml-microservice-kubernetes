@@ -1,6 +1,3 @@
-
-# conda create --name .devops Python=3.7
-# conda activate .devops
 ## The Makefile includes instructions on environment setup and lint tests
 # Create and activate a virtual environment
 # Install dependencies in requirements.txt
@@ -10,9 +7,11 @@
 
 setup:
 	# Create python virtualenv & source it
-	python3 -m venv ~/.devops2
-	# source ~/.devops/bin/activate
-3
+	python3 -m venv ~/.devops
+    # source ~/.devops/bin/activate
+    # conda create --name .devops Python=3.7
+    # conda activate .devops
+
 install:
 	# This should be run from inside a virtualenv
 	pip install --upgrade pip &&\
