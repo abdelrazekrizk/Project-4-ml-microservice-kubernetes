@@ -2,6 +2,9 @@
 
 [![CircleCI](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main.svg?style=svg)](https://circleci.com/gh/abdelrazekrizk/Project-4-ml-microservice-kubernetes/tree/main)
 
+
+[![Lint Code Base](https://github.com/abdelrazekrizk/Project-4-ml-microservice-kubernetes/actions/workflows/super-linter.yml/badge.svg?branch=main)](https://github.com/abdelrazekrizk/Project-4-ml-microservice-kubernetes/actions/workflows/super-linter.yml)
+
 # Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API.
