@@ -22,13 +22,278 @@ curl: (7) Failed to connect to localhost port 8000: Connection refused
 
 
 using port 8080
+ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ source ~/.devops/bin/activate
 (.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
-Port: 8080
+Port: 8000
 host: 0.0.0.0
 {
   "prediction": [
     20.35373177134412
   ]
 }
-
-
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ 
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ . ./make_prediction.sh
+Port: 8000
+host: 0.0.0.0
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) ubuntu@ip-172-31-22-124:~/projects/Project-4-ml-microservice-kubernetes$ 

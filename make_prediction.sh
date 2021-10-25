@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PORT=8080
+PORT=8000
 localhost=0.0.0.0
 echo "Port: $PORT"
 echo "host: $localhost"

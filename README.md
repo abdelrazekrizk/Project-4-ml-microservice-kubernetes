@@ -127,12 +127,12 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 * Install requirements
 
-          make install
+            make install
 
-          conda list
+            conda list
 
-        Output
-         # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
+            Output
+            # packages in environment at /home/ubuntu/miniconda3/envs/.devops:
                 # Name                    Version                   Build  Channel
                 _libgcc_mutex             0.1                        main
                 _openmp_mutex             4.5                       1_gnu
@@ -179,12 +179,156 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
                 xz                        5.2.5                h7b6447c_0
                 zlib                      1.2.11               h7b6447c_3
 
+# find out what distribution of linux your running
 
-## Kubernetes Steps
+            cat /etc/*release or cat /etc/issue*
+
+            Output
+            DISTRIB_ID=Ubuntu
+            DISTRIB_RELEASE=18.04
+            DISTRIB_CODENAME=bionic
+            DISTRIB_DESCRIPTION="Ubuntu 18.04.6 LTS"
+            NAME="Ubuntu"
+            VERSION="18.04.6 LTS (Bionic Beaver)"
+            ID=ubuntu
+            ID_LIKE=debian
+            PRETTY_NAME="Ubuntu 18.04.6 LTS"
+            VERSION_ID="18.04"
+            HOME_URL="https://www.ubuntu.com/"
+            SUPPORT_URL="https://help.ubuntu.com/"
+            BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+            PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+            VERSION_CODENAME=bionic
+            UBUNTU_CODENAME=bionic
+            cat: or: No such file or directory
+            cat: cat: No such file or directory
+            Ubuntu 18.04.6 LTS \n \l
+
+# Install VirtualBox on Ubuntu
+
+* Install VirtualBox from Ubuntu Repositories
+
+* update instance
+
+            sudo apt update
+            sudo apt upgrade -y
+
+* import and add Oracle public keys repository key to your system
+
+         wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+         Output
+         OK
+         wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+
+         Output
+         OK
+
+* Add Debian-based Linux distributions to repository
+
+        sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
+
+        Output
+            Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+            Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+            Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]       
+            Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]                         
+            Hit:5 https://download.docker.com/linux/ubuntu bionic InRelease                                                          
+            Get:6 http://download.virtualbox.org/virtualbox/debian bionic InRelease [4432 B]                                         
+            Get:7 http://download.virtualbox.org/virtualbox/debian bionic/contrib amd64 Packages [1899 B]
+            Fetched 258 kB in 1s (394 kB/s)     
+            Reading package lists... Done
+
+* Downloading virtualbox for Linux last distributions
+
+            wget https://download.c.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Ubuntu~bionic_amd64.deb
+
+          Output
+            --2021-10-25 09:42:54--  https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Ubuntu~bionic_amd64.deb
+            Resolving download.virtualbox.org (download.virtualbox.org)... 23.62.16.37
+            Connecting to download.virtualbox.org (download.virtualbox.org)|23.62.16.37|:443... connected.
+            HTTP request sent, awaiting response... 200 OK
+            Length: 93242264 (89M) [text/plain]
+            Saving to: ‘virtualbox-6.1_6.1.28-147628~Ubuntu~bionic_amd64.deb’
+
+            virtualbox-6.1_6.1.28-147628~U 100%[==================================================>]  88.92M   104MB/s    in 0.9s    
+
+            2021-10-25 09:42:55 (104 MB/s) - ‘virtualbox-6.1_6.1.28-147628~Ubuntu~bionic_amd64.deb’ saved [93242264/93242264]
+
+*  install VirtualBox 
+
+            sudo dpkg -i virtualbox-6.1_6.1.28-147628~Ubuntu~bionic_amd64.deb
+
+        Output
+            Selecting previously unselected package virtualbox-6.1.
+            (Reading database ... 91725 files and directories currently installed.)
+            Preparing to unpack virtualbox-6.1_6.1.28-147628~Ubuntu~bionic_amd64.deb ...
+            Unpacking virtualbox-6.1 (6.1.28-147628~Ubuntu~bionic) ...
+            dpkg: dependency problems prevent configuration of virtualbox-6.1:
+            virtualbox-6.1 depends on libgl1; however:
+            Package libgl1 is not installed.
+            virtualbox-6.1 depends on libopus0 (>= 1.1); however:
+            Package libopus0 is not installed.
+            virtualbox-6.1 depends on libqt5core5a (>= 5.9.0~beta); however:
+            Package libqt5core5a:amd64 is not installed.
+            virtualbox-6.1 depends on libqt5gui5 (>= 5.4.0); however:
+            Package libqt5gui5:amd64 is not installed.
+            virtualbox-6.1 depends on libqt5opengl5 (>= 5.0.2); however:
+            Package libqt5opengl5 is not installed.
+            virtualbox-6.1 depends on libqt5printsupport5 (>= 5.0.2); however:
+            Package libqt5printsupport5 is not installed.
+            virtualbox-6.1 depends on libqt5widgets5 (>= 5.7.0); however:
+            Package libqt5widgets5 is not installed.
+            virtualbox-6.1 depends on libqt5x11extras5 (>= 5.6.0); however:
+            Package libqt5x11extras5 is not installed.
+            virtualbox-6.1 depends on libsdl1.2debian (>= 1.2.11); however:
+            Package libsdl1.2debian is not installed.
+            virtualbox-6.1 depends on libvpx5 (>= 1.6.0); however:
+            Package libvpx5 is not installed.
+            virtualbox-6.1 depends on libxcursor1 (>> 1.1.2); however:
+            Package libxcursor1 is not installed.
+            virtualbox-6.1 depends on libxt6; however:
+            Package libxt6 is not installed.
+
+            dpkg: error processing package virtualbox-6.1 (--install):
+            dependency problems - leaving unconfigured
+            Processing triggers for systemd (237-3ubuntu10.52) ...
+            Processing triggers for ureadahead (0.100.0-21) ...
+            Processing triggers for mime-support (3.60ubuntu1) ...
+            Processing triggers for shared-mime-info (1.9-2) ...
+            Errors were encountered while processing:
+            virtualbox-6.1
+
+
+*  Fix install VirtualBox Errors
+
+            sudo apt -f install
+
+        Output
+            Reading package lists... Done
+            Building dependency tree       
+            Reading state information... Done
+            Correcting dependencies... Done
+            The following additional packages will be installed: ..........
+
+*  Check VirtualBox kernel
+
+            sudo systemctl status vboxdrv
+
+        Output
+            ● vboxdrv.service - VirtualBox Linux kernel module
+            Loaded: loaded (/usr/lib/virtualbox/vboxdrv.sh; enabled; vendor preset: enabled)
+            Active: active (exited) since Mon 2021-10-25 09:56:14 UTC; 18min ago
+            Tasks: 0 (limit: 4915)
+            CGroup: /system.slice/vboxdrv.service
+
+            Oct 25 09:56:14 ip-172-31-22-124 systemd[1]: Starting VirtualBox Linux kernel module...
+            Oct 25 09:56:14 ip-172-31-22-124 vboxdrv.sh[98944]: vboxdrv.sh: Starting VirtualBox services.
+            Oct 25 09:56:14 ip-172-31-22-124 systemd[1]: Started VirtualBox Linux kernel module.            
+
+# Install Docker Engine on Ubuntu
 
 * Setup and Configure Docker locally:
-
-#### Install Docker Engine on Ubuntu
 
 https://docs.docker.com/engine/install/ubuntu/
 
@@ -258,20 +402,18 @@ Troubleshooting Docker :
 
           sudo chmod 666 /var/run/docker.sock
 
+          sudo addgroup docker
+
           sudo usermod -aG docker {USER}
-
-         #  newgrp docker
-
 
 
 * Create Flask app Docker Images:
 
             . ./run_docker.sh
 
-
 * Setup and Configure Kubernetes locally:
 
-# Installing kubectl
+# Install Kubernetes Engine on Ubuntu
 
 https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
@@ -318,7 +460,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 * Start your cluster
 
-            Start your cluster
+            minikube start
 
              Output
              ubuntu@ip-172-31-27-175:~ minikube start
@@ -489,40 +631,37 @@ Verify hadolint
 
 
 1. Standalone:  `python app.py`
-- can not run app.py port 80
+- can not run app.py port 80 alone but can run alone in port  > 8000
+
+* config
+- Standalon run
+- app.py
+ app.run(host='0.0.0.0', port=8000, debug=True)
 
 2. Run in Docker:  `./run_docker.sh`
 
 * config
 - make_prediction.sh
-
 PORT=8080
 localhost=0.0.0.0
 
 * config
-- run_kubernetes.sh
-
-PORT=8080
-
-* config
 - app.py
- app.run(host='0.0.0.0', port=8080, debug=True)
+ app.run(host='0.0.0.0', port=80, debug=True)
 
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
 * config
 - make_prediction.sh
 
-PORT=8000
+PORT=8080
 localhost=0.0.0.0
 
 * config
 - run_kubernetes.sh
-
 PORT=8080
 
 * config
 - app.py
-
-app.run(host='0.0.0.0', port=8000, debug=True)
+app.run(host='0.0.0.0', port=80, debug=True)
 
