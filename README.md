@@ -638,28 +638,119 @@ Verify hadolint
 - app.py
  app.run(host='0.0.0.0', port=8000, debug=True)
 
-2. Run in Docker:  `./run_docker.sh`
+# Docker Prediction:
 
-* config
+      1. Run    `. ./run_docker.sh` in terminal
+
+      Output
+                * Serving Flask app "app" (lazy loading)
+                * Environment: production
+                  WARNING: Do not use the development server in a production environment.
+                  Use a production WSGI server instead.
+                * Debug mode: on
+                * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+                * Restarting with stat
+                * Debugger is active!
+                * Debugger PIN: 814-369-044
+                [2021-10-25 12:08:27,642] INFO in app: JSON payload: 
+                {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+                [2021-10-25 12:08:27,653] INFO in app: Inference payload DataFrame: 
+                  CHAS     RM    TAX  PTRATIO      B  LSTAT
+                0     0  6.575  296.0     15.3  396.9   4.98
+                [2021-10-25 12:08:27,661] INFO in app: Scaling Payload: 
+                  CHAS     RM    TAX  PTRATIO      B  LSTAT
+                0     0  6.575  296.0     15.3  396.9   4.98
+                [2021-10-25 12:08:27,664] INFO in app: Prediction: [20.35373177134412]
+                172.17.0.1 - - [25/Oct/2021 12:08:27] "POST /predict HTTP/1.1" 200 -
+                [2021-10-25 12:08:30,506] INFO in app: JSON payload: 
+                {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+                [2021-10-25 12:08:30,515] INFO in app: Inference payload DataFrame: 
+                  CHAS     RM    TAX  PTRATIO      B  LSTAT
+                0     0  6.575  296.0     15.3  396.9   4.98
+                [2021-10-25 12:08:30,523] INFO in app: Scaling Payload: 
+                  CHAS     RM    TAX  PTRATIO      B  LSTAT
+                0     0  6.575  296.0     15.3  396.9   4.98
+                [2021-10-25 12:08:30,526] INFO in app: Prediction: [20.35373177134412]
+                172.17.0.1 - - [25/Oct/2021 12:08:30] "POST /predict HTTP/1.1" 200 -
+
+
+      2. Run    `. ./make_prediction.sh` in other terminal
+
+      Output
+                  Port: 8000
+                  host: 0.0.0.0
+                  {
+                    "prediction": [
+                      20.35373177134412
+                    ]
+                  }
+
+* config 
 - make_prediction.sh
-PORT=8080
+PORT=8000
 localhost=0.0.0.0
 
 * config
 - app.py
  app.run(host='0.0.0.0', port=80, debug=True)
 
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+
+# Kubernetes Prediction:
+
+      1. Run   `. ./run_kubernetes.sh` in terminal
+      
+      Output
+                  * Serving Flask app "app" (lazy loading)
+                  * Environment: production
+                    WARNING: Do not use the development server in a production environment.
+                    Use a production WSGI server instead.
+                  * Debug mode: on
+                  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+                  * Restarting with stat
+                  * Debugger is active!
+                  * Debugger PIN: 931-826-802
+                  [2021-10-27 13:34:58,867] INFO in app: JSON payload:  
+                  {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+                  [2021-10-27 13:05:47,201] INFO in app: Inference payload DataFrame: 
+                    CHAS     RM    TAX  PTRATIO      B  LSTAT
+                  0     0  6.575  296.0     15.3  396.9   4.98
+                  [2021-10-27 13:05:47,209] INFO in app: Scaling Payload: 
+                    CHAS     RM    TAX  PTRATIO      B  LSTAT
+                  0     0  6.575  296.0     15.3  396.9   4.98
+                  [2021-10-27 13:05:47,212] INFO in app: Prediction: [20.35373177134412]
+                  127.0.0.1 - - [27/Oct/2021 13:05:47] "POST /predict HTTP/1.1" 200 -
+                  [2021-10-27 13:05:48,749] INFO in app: JSON payload: 
+                  {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+                  [2021-10-27 13:05:48,758] INFO in app: Inference payload DataFrame: 
+                    CHAS     RM    TAX  PTRATIO      B  LSTAT
+                  0     0  6.575  296.0     15.3  396.9   4.98
+                  [2021-10-27 13:05:48,765] INFO in app: Scaling Payload: 
+                    CHAS     RM    TAX  PTRATIO      B  LSTAT
+                  0     0  6.575  296.0     15.3  396.9   4.98
+                  [2021-10-27 13:05:48,767] INFO in app: Prediction: [20.35373177134412]
+                  127.0.0.1 - - [27/Oct/2021 13:05:48] "POST /predict HTTP/1.1" 200 -
+                  
+      2. Run    `. ./make_prediction.sh` in other terminal
+
+      Output
+                  Port: 8000
+                  host: 0.0.0.0
+                  {
+                    "prediction": [
+                      20.35373177134412
+                    ]
+                  }                  
+ 
 
 * config
 - make_prediction.sh
 
-PORT=8080
+PORT=8000
 localhost=0.0.0.0
 
 * config
 - run_kubernetes.sh
-PORT=8080
+PORT=8000
 
 * config
 - app.py

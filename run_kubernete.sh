@@ -36,5 +36,5 @@ kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'
 kubectl port-forward pod/$POD_NAME 8000:80
 
 # Step 8:
-# log the podst
+# log the pod
 kubectl logs pod/$POD_NAME
